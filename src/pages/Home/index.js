@@ -9,10 +9,8 @@ import "./home.scss";
 const Home = () => {
   const dispatch = useDispatch();
   const { getDataResult } = useSelector((state) => state.dataReducer);
-  //   console.log(getDataResult, "data API from reducer");
 
   const [status, setStatus] = useState(false);
-  const [done, setDone] = useState(false);
   const [selected, setSelected] = useState("");
   const [description, setDescription] = useState("");
 
@@ -32,8 +30,18 @@ const Home = () => {
     setStatus(!status);
   };
 
-  //set modal status
-  const upDate = () => {
+  //update Description
+  const upDateDesc = () => {
+    dispatch(updateStatusData(selected));
+  };
+
+  //update Status Data,
+  const done = () => {
+    dispatch(updateStatusData(selected));
+  };
+
+  //Delete data
+  const deleteData = () => {
     dispatch(updateStatusData(selected));
   };
 
@@ -61,13 +69,13 @@ const Home = () => {
         <Modal funk={true} isOpen={status} toggle={toggle}>
           <ModalBody>{description}</ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={upDate}>
+            <Button color="primary" onClick={upDateDesc}>
               Update
             </Button>{" "}
-            <Button color="primary" onClick={toggle}>
+            <Button color="primary" onClick={done}>
               Done
             </Button>{" "}
-            <Button color="primary" onClick={toggle}>
+            <Button color="primary" onClick={deleteData}>
               Delete
             </Button>{" "}
             <Button color="secondary" onClick={toggle}>

@@ -28,7 +28,15 @@ export default function (state = initialState, action) {
           console.log(item, "item reducer");
           console.log(action.payload, "item action.payload");
           //return item.id === action.payload.id ? action.payload.data : item;
-        }), // replace matched item and returns the array
+        }),
+      });
+    case DELETE_DATA:
+      return Object.assign({}, state, {
+        state: state.data
+          .filter((item) => {
+            return item.id !== action.id; //delete matched data
+          })
+          .concat(action.payload), //concats new data
       });
     default:
       return state;
