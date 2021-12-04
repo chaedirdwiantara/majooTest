@@ -4,9 +4,9 @@ const TodoList = ({ color, title, ...rest }) => {
   return (
     <div
       style={{
-        flex: 1,
+        // flex: 1,
         backgroundColor: color,
-        width: 100,
+        width: 300,
         height: 25,
         borderRadius: 12,
         textAlign: "center",

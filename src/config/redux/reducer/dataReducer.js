@@ -9,7 +9,7 @@ const initialState = {
 export default function (state = initialState, action) {
   switch (action.type) {
     case GET_DATA:
-      //   console.log(action, "data dibaca reducer");
+      //console.log(action, "data dibaca reducer");
       return {
         ...state,
         getDataLoading: action.payload.loading,

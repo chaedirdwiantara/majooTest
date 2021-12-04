@@ -29,7 +29,7 @@ export const getDataList = () => {
             GET_DATA,
             response.data ? response.data : []
           );
-          //   console.log(response, "sukses fetch data");
+          //console.log(response, "sukses fetch data");
         }
       })
       .catch((error) => {
