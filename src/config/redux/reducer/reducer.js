@@ -1,7 +1,6 @@
 import { combineReducers } from "redux";
-// import globalReducer from "./globalReducer";
-import homeReducer from "./homeReducer";
+import dataReducer from "./dataReducer";
 
-const reducer = combineReducers({ homeReducer });
+const reducer = combineReducers({ dataReducer });
 
 export default reducer;

@@ -1,1 +1,1 @@
-export * from "./homeAction";
+export * from "./getDataAction";
